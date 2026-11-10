@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+nano detecta_el_engano.htmlnano detecta_el_engano.htmlnano detecta_el_engano.html<title>Detecta el engaño | Seguridad digital</title>
+
+<style>
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f4f8;
+    color: #202b3c;
+    line-height: 1.6;
+}
+header {
+    background: #172554;
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+}
+header h1 { font-size: 34px; margin: 0; }
+header p { margin-bottom: 0; }
+nav {
+    background: #1e3a8a;
+    padding: 12px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    font-weight: bold;
+}
+main {
+    max-width: 950px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+section {
+    background: white;
+    margin-bottom: 22px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #00000012;
+}
+h2 { color: #1e3a8a; }
+h3 { color: #334155; }
+.destacado {
+    background: #eff6ff;
+    border-left: 5px solid #2563eb;
+    padding: 15px;
+    border-radius: 5px;
+}
+.alerta {
+    background: #fff7ed;
+    border-left: 5px solid #ea580c;
+    padding: 15px;
+}
+button {
+    background: #1d4ed8;
+    color: white;
+    border: none;
+    padding: 11px 17px;
+    margin: 5px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+button:hover { background: #1e40af; }
+.opcion {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 10px 0;
+    background: #e8efff;
+    color: #172554;
+    border: 1px solid #cbd5e1;
+}
+.opcion:hover { background: #dbeafe; }
+.feedback {
+    display: none;
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 8px;
+    background: #ecfdf5;
+    border-left: 5px solid #16a34a;
+}
+pre {
+    background: #111827;
+    color: #d1fae5;
+    padding: 16px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+footer {
+    background: #172554;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+a { overflow-wrap: anywhere; }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Detecta solicitudes de engaño</h1>
+    <p>Aprende a reconocer mensajes sospechosos y proteger tu información personal.</p>
+    <p><strong>Recurso educativo de seguridad digital</strong></p>
+</header>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#caso">Caso</a>
+    <a href="#conceptos">Conceptos</a>
+    <a href="#laboratorio">Laboratorio</a>
+    <a href="#decisiones">Decisiones</a>
+</nav>
+
+<main>
+
+<section id="inicio">
+    <h2>1. Situación inicial</h2>
+    <p>
+        Imagina que recibes un mensaje de texto que aparenta ser de tu
+        universidad. El mensaje informa que tu cuenta será bloqueada
+        y te solicita ingresar a un enlace para actualizar tus datos.
+    </p>
+
+    <div class="alerta">
+        <strong>¡Cuidado!</strong>
+        Un mensaje puede parecer legítimo y, aun así, ser utilizado
+        para robar tus datos personales o credenciales.
+    </div>
+
+    <h3>¿Cómo utilizar este recurso?</h3>
+    <ol>
+        <li>Lee el caso y los conceptos de seguridad.</li>
+        <li>Revisa la evidencia del laboratorio.</li>
+        <li>Responde las tres situaciones interactivas.</li>
+        <li>Lee las explicaciones de cada respuesta.</li>
+    </ol>
+
+    <p><strong>Dirigido a:</strong> estudiantes universitarios.</p>
+</section>
+
+<section id="caso">
+    <h2>2. Caso de estudio: ataque de phishing por SMS</h2>
+
+    <p>
+        En agosto de 2022, Cloudflare publicó un análisis sobre un
+        ataque de phishing mediante mensajes de texto dirigido a sus
+        empleados. Los atacantes enviaron mensajes que imitaban
+        comunicaciones de confianza y utilizaron páginas falsas para
+        intentar obtener credenciales de acceso.
+    </p>
+
+    <p>
+        El caso muestra cómo los delincuentes pueden utilizar la
+        ingeniería social para generar confianza y presionar a las
+        personas para que ingresen información privada.
+    </p>
+
+    <div class="destacado">
+        <strong>Aprendizaje del caso:</strong>
+        no debemos confiar en un mensaje únicamente porque utiliza
+        el nombre o la imagen de una institución conocida.
+        Es necesario verificar la solicitud por un canal oficial.
+    </div>
+
+    <p>
+        <strong>Fuente:</strong>
+        Cloudflare (2022).
+        <a href="https://blog.cloudflare.com/2022-07-sms-phishing-attacks/"
+        target="_blank">The mechanics of a sophisticated phishing scam and how we stopped it.</a>
+    </p>
+</section>
+
+<section id="conceptos">
+    <h2>3. Conceptos de seguridad</h2>
+
+    <h3>Concepto 1. Phishing y smishing</h3>
+    <p>
+        El phishing es una técnica de ingeniería social en la que
+        los delincuentes suplantan la identidad de entidades confiables
+        para obtener información personal. Cuando el engaño se realiza
+        mediante mensajes SMS, se conoce como smishing.
+    </p>
+
+    <h3>Concepto 2. Partes de una dirección URL</h3>
+    <p>
+        Una URL permite identificar una dirección en internet.
+        Dos de sus partes importantes son:
+    </p>
+
+    <div class="destacado">
+        <p><strong>Dominio:</strong> identifica el servidor o sitio al que se dirige la solicitud.</p>
+        <p><strong>Ruta:</strong> indica el recurso o ubicación solicitada dentro del sitio.</p>
+        <p>Ejemplo: https://universidad.example/login</p>
+        <p>Dominio: universidad.example</p>
+        <p>Ruta: /login</p>
+    </div>
+
+    <h3>Dos medidas de protección</h3>
+    <ol>
+        <li>
+            Revisar cuidadosamente el remitente y el dominio del enlace
+            antes de abrirlo.
+        </li>
+        <li>
+            Confirmar cualquier solicitud de actualización de datos
+            comunicándose directamente con los canales oficiales
+            de la institución.
+        </li>
+    </ol>
+</section>
+
+<section id="laboratorio">
+    <h2>4. Evidencia del laboratorio</h2>
+
+    <p>
+        Se realizó una prueba local en Python utilizando la biblioteca
+        <strong>urllib.parse</strong> para analizar dos direcciones URL
+        ficticias y comparar sus dominios y rutas.
+    </p>
+
+    <h3>Condiciones de prueba</h3>
+    <p><strong>URL A:</strong> https://soporte-universidad.example/login</p>
+    <p><strong>URL B:</strong> https://soporte-universidad.example/actualizar-cuenta</p>
+
+    <h3>Resultado obtenido</h3>
+    <pre>===== ANALISIS DE URL =====
+
+CONDICION A: URL ORIGINAL
+URL: https://soporte-universidad.example/login
+Dominio: soporte-universidad.example
+Ruta: /login
+
+CONDICION B: URL MODIFICADA
+URL: https://soporte-universidad.example/actualizar-cuenta
+Dominio: soporte-universidad.example
+Ruta: /actualizar-cuenta
+
+===== COMPARACION =====
+
+Ambas URL tienen el mismo dominio.
+Las rutas son diferentes.</pre>
+
+    <div class="destacado">
+        <strong>Interpretación:</strong>
+        el resultado confirmó que las dos direcciones tienen el mismo
+        dominio, pero solicitan rutas diferentes. Por tanto, modificar
+        la ruta no significa necesariamente cambiar el dominio.
+    </div>
+
+    <div class="alerta">
+        <strong>Alcance de la prueba:</strong>
+        se utilizaron direcciones ficticias terminadas en .example.
+        El laboratorio analizó su estructura sin conectarse a servidores.
+        Este análisis no determina si una página es legítima o maliciosa.
+    </div>
+
+    <h3>¿Qué aprendimos?</h3>
+    <p>
+        Aprendimos a identificar las partes de una URL y comprendimos
+        la importancia de revisar cuidadosamente los enlaces antes
+        de ingresar información personal.
+    </p>
+</section>
+
+<section id="decisiones">
+    <h2>5. Pon a prueba tus decisiones</h2>
+    <p>
+        Lee cada situación, selecciona una respuesta y revisa
+        la explicación. Todas las opciones muestran sus posibles
+        consecuencias.
+    </p>
+
+    <h3>Decisión 1. Mensaje sospechoso</h3>
+    <p>
+        Recibes un SMS que dice: "Tu cuenta universitaria será bloqueada.
+        Ingresa al siguiente enlace para evitarlo".
+    </p>
+
+    <button class="opcion" onclick="mostrar('f1',0)">
+        A. Abrir inmediatamente el enlace.
+    </button>
+    <button class="opcion" onclick="mostrar('f1',1)">
+        B. Verificar el mensaje por los canales oficiales de la universidad.
+    </button>
+    <button class="opcion" onclick="mostrar('f1',2)">
+        C. Responder el mensaje solicitando más información.
+    </button>
+
+    <div id="f1" class="feedback"></div>
+
+    <hr>
+
+    <h3>Decisión 2. Revisar una dirección URL</h3>
+    <p>
+        Recibes un enlace que contiene la palabra "universidad",
+        pero no reconoces el dominio.
+    </p>
+
+    <button class="opcion" onclick="mostrar('f2',0)">
+        A. Confiar en el enlace porque contiene el nombre de la universidad.
+    </button>
+    <button class="opcion" onclick="mostrar('f2',1)">
+        B. Revisar el dominio y compararlo con el sitio oficial.
+    </button>
+    <button class="opcion" onclick="mostrar('f2',2)">
+        C. Ingresar los datos para comprobar si funciona.
+    </button>
+
+    <div id="f2" class="feedback"></div>
+
+    <hr>
+
+    <h3>Decisión 3. Actualización de contraseña</h3>
+    <p>
+        Recibes un mensaje que solicita actualizar tu contraseña
+        y compartir un código de verificación.
+    </p>
+
+    <button class="opcion" onclick="mostrar('f3',0)">
+        A. Ingresar la contraseña y el código en el enlace recibido.
+    </button>
+    <button class="opcion" onclick="mostrar('f3',1)">
+        B. Entrar al portal oficial directamente y verificar la solicitud.
+    </button>
+    <button class="opcion" onclick="mostrar('f3',2)">
+        C. Compartir el código con quien envió el mensaje.
+    </button>
+
+    <div id="f3" class="feedback"></div>
+</section>
+
+<section>
+    <h2>6. Acción final: protege tu información</h2>
+
+    <p>
+        Antes de abrir un enlace recibido por mensaje o correo,
+        detente y realiza estas acciones:
+    </p>
+
+    <ol>
+        <li>Revisa quién envió el mensaje.</li>
+        <li>Comprueba el dominio de la dirección URL.</li>
+        <li>Verifica la solicitud mediante un canal oficial.</li>
+        <li>Nunca compartas contraseñas ni códigos de verificación.</li>
+    </ol>
+
+    <div class="destacado">
+        <strong>Tu decisión importa:</strong>
+        ante un mensaje sospechoso, no hagas clic por impulso.
+        Verifica primero y protege tus datos.
+    </div>
+</section>
+
+<section>
+    <h2>7. Prueba del recurso educativo</h2>
+    <p>
+        Para comprobar si este recurso se entiende, se le
+	 realizaran una serie de pregunta.
+    </p>
+
+    <p><strong>prueba:</strong></p>
+    <ul>
+ 	 <li>¿Qué aprendiò con este recurso?</li>
+        <li>¿En qué parte tuvo dudas o confusión?</li>
+        <li>¿Qué cambio harìa para mejorar el recurso?</li>
+    </ul>
+
+    <p>
+        <strong>Importante:</strong> estos datos deben completarse
+        después de realizar la prueba real. No se deben inventar
+        respuestas ni resultados.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>Detecta solicitudes de  engaño | Recurso educativo de ciberseguridad</p>
+    <p>Aprende a identificar amenazas y tomar decisiones seguras.</p>
+</footer>
+
+<script>
+function mostrar(id, opcion) {
+    const explicaciones = {
+        f1: [
+            "Riesgo: abrir el enlace puede llevarte a una página falsa que intente robar tus credenciales. Lo más seguro es verificar primero.",
+            "Decisión segura: confirmar por un canal oficial permite comprobar si la solicitud es verdadera sin depender del enlace recibido.",
+            "Riesgo: responder puede confirmar que tu número está activo y facilitar nuevos intentos de engaño. Es preferible no interactuar y verificar por otro canal."
+        ],
+        f2: [
+            "Riesgo: una palabra conocida dentro de una URL no demuestra que el sitio sea oficial. Podrías entrar a una página controlada por un atacante.",
+            "Decisión segura: revisar el dominio y compararlo con el sitio oficial ayuda a detectar direcciones engañosas.",
+            "Riesgo: ingresar información para probar el enlace puede exponer tus datos. Primero verifica la dirección sin introducir credenciales."
+        ],
+        f3: [
+            "Riesgo alto: entregar tu contraseña y código puede permitir que otra persona acceda a tu cuenta.",
+            "Decisión segura: entrar directamente al portal oficial permite comprobar si realmente debes actualizar tu contraseña. Nunca compartas códigos de verificación.",
+            "Riesgo alto: un código de verificación puede permitir autorizar el acceso a tu cuenta. Nunca debes compartirlo con otras personas."
+        ]
+    };
+
+    const caja = document.getElementById(id);
+    caja.style.display = "block";
+    caja.innerHTML = "<strong>Explicación:</strong><br>" +
+        explicaciones[id][opcion];
+}
+</script>
+
+</body>
+</html>
